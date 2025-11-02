@@ -9,3 +9,23 @@ spring:
     function:
       # 定义由 Spring Cloud Function 管理的函数
       definition: pack|label
+    stream:
+      # 用于配置目的地绑定的区域
+      bindings:
+        # 输入绑定
+        packlabel-in-0:
+          # 在代理中，绑定器实际绑定的名称 (RabbitMQ 中的交换机)
+          destination: order-accepted
+          # 对目的地感兴趣的消费者组，与应用的名称相同
+          group: ${spring.application.name}
+        # 输出绑定
+        packlabel-out-0:
+          # 在代理中，绑定器实际绑定的名称 (RabbitMQ 中的交换机)
+          destination: order-dispatched
+  # 配置 RabbitMQ 集成
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+    connection-timeout: 5s
