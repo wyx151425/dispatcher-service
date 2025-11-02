@@ -1,11 +1,11 @@
 server:
-  # ??? Web ??????????
+  # 嵌入式 Web 服务器将会用到的端口
   port: 9003
 spring:
   application:
-    # ?????
+    # 应用的名称
     name: dispatcher-service
   cloud:
     function:
-      # ??? Spring Cloud Function ?????
+      # 定义由 Spring Cloud Function 管理的函数
       definition: pack|label
