@@ -22,7 +22,7 @@ spring:
         packlabel-out-0:
           # 在代理中，绑定器实际绑定的名称 (RabbitMQ 中的交换机)
           destination: order-dispatched
-  # 配置 RabbitMQ 集成
+  # 配置与 RabbitMQ 的集成
   rabbitmq:
     host: localhost
     port: 5672
